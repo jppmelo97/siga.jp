@@ -54,12 +54,12 @@ const LogoItem: React.FC<{ logo: Logo }> = ({ logo }) => {
   const [error, setError] = useState(false);
 
   return (
-    <div className="flex items-center justify-center px-4 py-2 bg-transparent transition-all duration-500 cursor-default group h-20 md:h-24 w-40 md:w-48 shrink-0">
+    <div className="flex items-center justify-center px-4 py-2 bg-transparent transition-all duration-500 cursor-default h-20 md:h-24 w-40 md:w-48 shrink-0">
       {!error ? (
         <img 
           src={logo.image || `https://logo.clearbit.com/${logo.domain}`} 
           alt={`Logo da empresa ${logo.name}`} 
-          className="h-full w-full object-contain p-2 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+          className="h-full w-full object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
           onError={() => setError(true)}
           referrerPolicy="no-referrer"
         />
@@ -154,24 +154,24 @@ export default function App() {
   const [activeService, setActiveService] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-carbon-black selection:bg-brand-accent selection:text-black">
+    <div className="min-h-screen bg-carbon-black selection:bg-brand-red selection:text-black">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-carbon-black/80 backdrop-blur-md" role="navigation" aria-label="Navegação Principal">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="text-xl font-display font-bold tracking-tighter">
-            JOÃO<span className="text-brand-accent">MELO</span>
+            JOÃO<span className="text-brand-red">MELO</span>
           </div>
           <div className="hidden md:flex gap-8 text-sm font-medium text-white/60">
-            <a href="#servicos" className="hover:text-brand-accent transition-colors focus:outline-none focus:ring-2 focus:ring-brand-accent rounded px-2">O que eu faço</a>
-            <a href="#autoridade" className="hover:text-brand-accent transition-colors focus:outline-none focus:ring-2 focus:ring-brand-accent rounded px-2">Quem sou eu</a>
-            <a href="#resultados" className="hover:text-brand-accent transition-colors focus:outline-none focus:ring-2 focus:ring-brand-accent rounded px-2">Resultados</a>
+            <a href="#servicos" className="hover:text-brand-red transition-colors focus:outline-none focus:ring-2 focus:ring-brand-red rounded px-2">O que eu faço</a>
+            <a href="#autoridade" className="hover:text-brand-red transition-colors focus:outline-none focus:ring-2 focus:ring-brand-red rounded px-2">Quem sou eu</a>
+            <a href="#resultados" className="hover:text-brand-red transition-colors focus:outline-none focus:ring-2 focus:ring-brand-red rounded px-2">Resultados</a>
           </div>
           <a 
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Falar com João Melo no WhatsApp"
-            className="px-4 md:px-5 py-2 rounded-full border border-brand-accent text-brand-accent text-xs md:text-sm font-bold hover:bg-brand-accent hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-accent whitespace-nowrap"
+            className="px-4 md:px-5 py-2 rounded-full border border-brand-red text-brand-red text-xs md:text-sm font-bold hover:bg-brand-red hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-red whitespace-nowrap"
           >
             QUERO CRESCER
           </a>
@@ -180,25 +180,33 @@ export default function App() {
 
       {/* Hero Section */}
       <section className="relative pt-64 pb-48 px-6 overflow-hidden">
-        {/* Background Accents */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-accent/5 blur-[120px] rounded-full" />
+        {/* Background Accents & Premium Image */}
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
+          <img 
+            src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=2000&q=80" 
+            alt="Corporate Environment" 
+            className="w-full h-full object-cover [mask-image:linear-gradient(to_bottom,black_10%,transparent_90%)]"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none z-0">
+          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-red/5 blur-[120px] rounded-full" />
           <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-white/5 blur-[100px] rounded-full" />
         </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-7xl mx-auto flex flex-col items-center text-center relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-5xl"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] md:text-xs font-bold text-brand-accent mb-10 tracking-[0.2em] uppercase">
-              <span className="w-2 h-2 rounded-full bg-brand-accent animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] md:text-xs font-bold text-brand-red mb-10 tracking-[0.2em] uppercase">
+              <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
               Gestão • Comunicação • Inovação
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] tracking-tight mb-10">
-              Organizo sua empresa por dentro e <span className="text-brand-accent italic">fortaleço como ela é vista pelo mercado.</span>
+              Organizo sua empresa por dentro e <span className="text-brand-red italic">fortaleço como ela é vista pelo mercado.</span>
             </h1>
             <p className="text-lg md:text-xl text-white/40 max-w-2xl mb-12 leading-relaxed font-light">
               Uma metodologia que une o rigor da gestão à força da narrativa. Estruturo sua operação para escala real e construo sua imagem como autoridade incontestável.
@@ -209,7 +217,7 @@ export default function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Agendar diagnóstico gratuito via WhatsApp"
-                className="group px-8 md:px-10 py-5 bg-brand-accent text-white font-bold text-base md:text-lg rounded-full flex items-center justify-center gap-3 hover:scale-105 transition-all shadow-none focus:outline-none focus:ring-4 focus:ring-brand-accent/50"
+                className="group px-8 md:px-10 py-5 bg-brand-red text-white font-bold text-base md:text-lg rounded-full flex items-center justify-center gap-3 hover:scale-105 transition-all shadow-none focus:outline-none focus:ring-4 focus:ring-brand-red/50"
               >
                 Agendar Consultoria de Marca
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -227,7 +235,7 @@ export default function App() {
                     <Counter value={200} suffix="+" /> Empresas
                   </span>
                   <p className="text-white/40 text-xs flex items-center gap-1">
-                    <MapPin className="w-3 h-3 text-brand-accent" /> Atendidas em todo o Brasil
+                    <MapPin className="w-3 h-3 text-brand-red" /> Atendidas em todo o Brasil
                   </p>
                 </div>
               </div>
@@ -237,18 +245,18 @@ export default function App() {
       </section>
 
       {/* Social Proof Bar */}
-      <section className="py-24 border-y border-white/5 bg-white/[0.01] overflow-hidden">
+      <section className="py-24 border-y border-white/5 bg-carbon-black overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-[10px] font-bold text-white/30 uppercase tracking-[0.3em] mb-12 text-center">
+          <p className="text-[10px] font-bold text-white/40 uppercase tracking-[0.3em] mb-12 text-center">
             Quem já confiou e aprovou o meu trabalho
           </p>
-          <div className="relative">
-            <div className="flex gap-12 md:gap-24 animate-marquee whitespace-nowrap">
+          <div className="relative group">
+            <div className="flex gap-12 md:gap-24 animate-marquee whitespace-nowrap group-hover:[animation-play-state:paused]">
               {[...LOGOS, ...LOGOS, ...LOGOS].map((logo, idx) => (
                 <LogoItem key={`${logo.name}-${idx}`} logo={logo} />
               ))}
             </div>
-            {/* Gradient Overlays for Marquee */}
+            {/* Gradient Overlays for Marquee smooth fade */}
             <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-carbon-black to-transparent z-10" />
             <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-carbon-black to-transparent z-10" />
           </div>
@@ -261,7 +269,7 @@ export default function App() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
             <div className="max-w-2xl">
               <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6">
-                Arquitetura de <span className="text-brand-accent">Negócios & Narrativa.</span>
+                Arquitetura de <span className="text-brand-red">Negócios & Narrativa.</span>
               </h2>
               <p className="text-xl text-white/40 font-light">
                 Soluções estratégicas para quem busca escala real e uma marca que domina o mercado.
@@ -296,10 +304,10 @@ export default function App() {
                 </AnimatePresence>
 
                 <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-black transition-all duration-500 mb-8">
+                  <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-brand-red group-hover:bg-brand-red group-hover:text-black transition-all duration-500 mb-8">
                     {service.icon}
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-brand-accent transition-colors">{service.title}</h3>
+                  <h3 className="text-2xl font-bold mb-4 group-hover:text-brand-red transition-colors">{service.title}</h3>
                   <p className="text-white/50 leading-relaxed font-light">
                     {service.description}
                   </p>
@@ -313,7 +321,7 @@ export default function App() {
       {/* Authority Section - Minimalist */}
       <section id="autoridade" className="py-40 relative bg-carbon-black overflow-hidden flex items-center justify-center border-t border-white/5">
         <div className="absolute top-0 right-0 w-full h-full pointer-events-none">
-          <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-brand-accent/5 blur-[120px] rounded-full -translate-y-1/2" />
+          <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-brand-red/5 blur-[120px] rounded-full -translate-y-1/2" />
         </div>
         
         <div className="max-w-4xl mx-auto px-6 w-full relative z-10 flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-20">
@@ -332,10 +340,16 @@ export default function App() {
             </div>
             
             {/* Content & Credentials */}
-            <div className="flex-1 text-center md:text-left flex flex-col justify-center">
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="flex-1 text-center md:text-left flex flex-col justify-center"
+            >
               <div className="mb-4 inline-flex items-center gap-2">
-                <span className="w-8 h-[1px] bg-brand-accent" />
-                <span className="text-[10px] md:text-xs font-bold text-brand-accent tracking-[0.2em] uppercase">Estrategista de Negócios</span>
+                <span className="w-8 h-[1px] bg-brand-red" />
+                <span className="text-[10px] md:text-xs font-bold text-brand-red tracking-[0.2em] uppercase">Estrategista de Negócios</span>
               </div>
               
               <h2 className="text-3xl md:text-5xl font-display font-bold mb-8 text-white leading-tight">
@@ -354,16 +368,16 @@ export default function App() {
               
               <div className="flex flex-col sm:flex-row gap-6 items-center justify-center md:justify-start pt-6 border-t border-white/5">
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-brand-accent" />
+                  <CheckCircle2 className="w-5 h-5 text-brand-red" />
                   <span className="text-sm text-white/70 font-medium">+<Counter value={200} /> empresas impactadas</span>
                 </div>
                 <div className="hidden sm:block text-white/20">•</div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-brand-accent" />
+                  <CheckCircle2 className="w-5 h-5 text-brand-red" />
                   <span className="text-sm text-white/70 font-medium">Atuação em 6 estados</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
         </div>
       </section>
@@ -373,7 +387,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-24 text-center">
             <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6">
-              Impacto em <span className="text-brand-accent">Números.</span>
+              Impacto em <span className="text-brand-red">Números.</span>
             </h2>
             <p className="text-xl text-white/40 font-light">Resultados mensuráveis que validam o método.</p>
           </div>
@@ -382,11 +396,15 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="md:col-span-2 p-8 md:p-16 rounded-[40px] bg-white/[0.03] border border-white/10 flex flex-col justify-between group hover:border-brand-accent/30 transition-all duration-500 relative overflow-hidden"
+              className="md:col-span-2 p-8 md:p-16 rounded-[40px] bg-white/[0.03] border border-white/10 flex flex-col justify-between group hover:border-brand-red/30 transition-all duration-500 relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 blur-[80px] rounded-full -mr-20 -mt-20" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-1000 z-0">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000" alt="Data" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" referrerPolicy="no-referrer" />
+              </div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-red/5 blur-[80px] rounded-full -mr-20 -mt-20 z-0" />
+              
               <div className="flex justify-between items-start mb-16 relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-brand-accent/10 flex items-center justify-center text-brand-accent">
+                <div className="w-16 h-16 rounded-2xl bg-brand-red/10 flex items-center justify-center text-brand-red">
                   <TrendingUp className="w-8 h-8" />
                 </div>
                 <div className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold text-white/40 uppercase tracking-widest">
@@ -394,7 +412,7 @@ export default function App() {
                 </div>
               </div>
               <div className="relative z-10">
-                <div className="text-7xl md:text-[12rem] font-display font-bold tracking-tighter text-brand-accent mb-6 leading-none">
+                <div className="text-7xl md:text-[12rem] font-display font-bold tracking-tighter text-brand-red mb-6 leading-none">
                   <Counter value={9.2} decimals={1} />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold mb-4">Índice de Confiança</h3>
@@ -407,7 +425,7 @@ export default function App() {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="p-8 md:p-12 rounded-[40px] bg-brand-accent text-white flex flex-col justify-between shadow-[0_20px_50px_rgba(255,0,0,0.15)] relative overflow-hidden group"
+                className="p-8 md:p-12 rounded-[40px] bg-brand-red text-white flex flex-col justify-between shadow-[0_20px_50px_rgba(255,0,0,0.15)] relative overflow-hidden group"
               >
                 <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
                   <img src="https://picsum.photos/seed/growth/600/800" alt="" className="w-full h-full object-cover" aria-hidden="true" referrerPolicy="no-referrer" />
@@ -426,7 +444,7 @@ export default function App() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-8 md:p-12 rounded-[40px] bg-white/[0.03] border border-white/10 flex flex-col justify-between group hover:border-brand-accent/30 transition-all duration-500"
+                className="p-8 md:p-12 rounded-[40px] bg-white/[0.03] border border-white/10 flex flex-col justify-between group hover:border-brand-red/30 transition-all duration-500"
               >
                 <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-white">
                   <Users className="w-6 h-6" />
@@ -447,7 +465,7 @@ export default function App() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-8 md:p-16 rounded-[40px] bg-white/[0.03] border border-white/10 flex flex-col justify-between group hover:border-brand-accent/30 transition-all duration-500"
+              className="p-8 md:p-16 rounded-[40px] bg-white/[0.03] border border-white/10 flex flex-col justify-between group hover:border-brand-red/30 transition-all duration-500"
             >
               <div className="flex justify-between items-start mb-16">
                 <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center text-white">
@@ -473,8 +491,8 @@ export default function App() {
                 <img src="https://picsum.photos/seed/tech-bg/1200/800" alt="" className="w-full h-full object-cover" aria-hidden="true" referrerPolicy="no-referrer" />
               </div>
               <div className="w-full md:w-1/3 aspect-square rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center relative overflow-hidden">
-                <Rocket className="w-20 h-20 text-brand-accent opacity-20 group-hover:scale-110 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-brand-accent/5 animate-pulse" />
+                <Rocket className="w-20 h-20 text-brand-red opacity-20 group-hover:scale-110 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-brand-red/5 animate-pulse" />
               </div>
               <div className="flex-1 relative z-10">
                 <h3 className="text-2xl md:text-3xl font-bold mb-6">Inteligência Operacional</h3>
@@ -489,7 +507,7 @@ export default function App() {
 
       {/* Final CTA */}
       <section className="py-64 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-brand-accent/5 pointer-events-none" />
+        <div className="absolute inset-0 bg-brand-red/5 pointer-events-none" />
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -497,7 +515,7 @@ export default function App() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter mb-12 leading-[0.85]">
-              Sua empresa pode <span className="text-brand-accent italic">render muito mais.</span>
+              Sua empresa pode <span className="text-brand-red italic">render muito mais.</span>
             </h2>
             <p className="text-2xl text-white/60 mb-16 max-w-2xl mx-auto font-light">
               O diagnóstico é o primeiro passo para você ter uma empresa organizada, eficiente e que não depende só de você.
@@ -508,15 +526,15 @@ export default function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Agendar Consultoria de Marca agora pelo WhatsApp"
-                className="px-10 md:px-16 py-6 md:py-8 bg-brand-accent text-white font-bold text-xl md:text-2xl rounded-full hover:scale-105 transition-all shadow-none focus:outline-none focus:ring-4 focus:ring-brand-accent/50 text-center"
+                className="px-10 md:px-16 py-6 md:py-8 bg-brand-red text-white font-bold text-xl md:text-2xl rounded-full hover:scale-105 transition-all shadow-none focus:outline-none focus:ring-4 focus:ring-brand-red/50 text-center"
               >
                 Agendar Consultoria de Marca
               </a>
               <div className="flex flex-col md:flex-row gap-8 text-white/40 font-medium">
-                <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 hover:text-brand-accent transition-colors focus:outline-none focus:ring-2 focus:ring-brand-accent rounded px-2" aria-label={`Enviar e-mail para ${EMAIL}`}>
+                <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 hover:text-brand-red transition-colors focus:outline-none focus:ring-2 focus:ring-brand-red rounded px-2" aria-label={`Enviar e-mail para ${EMAIL}`}>
                   <Mail className="w-5 h-5" /> {EMAIL}
                 </a>
-                <a href={WHATSAPP_LINK} className="flex items-center gap-2 hover:text-brand-accent transition-colors focus:outline-none focus:ring-2 focus:ring-brand-accent rounded px-2" aria-label="Ligar ou enviar mensagem para (98) 98143-1080">
+                <a href={WHATSAPP_LINK} className="flex items-center gap-2 hover:text-brand-red transition-colors focus:outline-none focus:ring-2 focus:ring-brand-red rounded px-2" aria-label="Ligar ou enviar mensagem para (98) 98143-1080">
                   <Phone className="w-5 h-5" /> (98) 98143-1080
                 </a>
               </div>
@@ -531,7 +549,7 @@ export default function App() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-12">
             <div className="text-center md:text-left">
               <div className="text-3xl font-display font-bold mb-4 tracking-tighter">
-                JOÃO<span className="text-brand-accent">MELO</span>
+                JOÃO<span className="text-brand-red">MELO</span>
               </div>
               <p className="text-white/30 text-sm max-w-xs font-light leading-relaxed mx-auto md:mx-0">
                 Estrategista de Negócios. Unindo gestão, narrativa e tecnologia para escalar resultados reais em todo o Brasil.
@@ -545,21 +563,21 @@ export default function App() {
                   target="_blank" 
                   rel="noopener noreferrer" 
                   aria-label="Seguir João Melo no Instagram"
-                  className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all group focus:outline-none focus:ring-2 focus:ring-brand-accent"
+                  className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-brand-red hover:text-white transition-all group focus:outline-none focus:ring-2 focus:ring-brand-red"
                 >
                   <Instagram className="w-6 h-6 group-hover:scale-110 transition-transform" />
                 </a>
                 <a 
                   href="#" 
                   aria-label="Ver perfil no LinkedIn"
-                  className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all group focus:outline-none focus:ring-2 focus:ring-brand-accent"
+                  className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-brand-red hover:text-white transition-all group focus:outline-none focus:ring-2 focus:ring-brand-red"
                 >
                   <Linkedin className="w-6 h-6 group-hover:scale-110 transition-transform" />
                 </a>
                 <a 
                   href={`mailto:${EMAIL}`} 
                   aria-label={`Enviar e-mail para ${EMAIL}`}
-                  className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-all group focus:outline-none focus:ring-2 focus:ring-brand-accent"
+                  className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-brand-red hover:text-white transition-all group focus:outline-none focus:ring-2 focus:ring-brand-red"
                 >
                   <Mail className="w-6 h-6 group-hover:scale-110 transition-transform" />
                 </a>
@@ -621,7 +639,7 @@ function ScrollToTop() {
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           onClick={scrollToTop}
           aria-label="Voltar ao topo"
-          className="w-14 h-14 rounded-full bg-brand-accent text-white shadow-2xl flex items-center justify-center hover:scale-110 transition-transform focus:outline-none focus:ring-4 focus:ring-brand-accent/50"
+          className="w-14 h-14 rounded-full bg-brand-red text-white shadow-2xl flex items-center justify-center hover:scale-110 transition-transform focus:outline-none focus:ring-4 focus:ring-brand-red/50"
         >
           <ArrowUpRight className="w-7 h-7 -rotate-45" />
         </motion.button>
