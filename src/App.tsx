@@ -441,7 +441,7 @@ export default function App() {
                   <iframe 
                     width="100%" 
                     height="100%" 
-                    src="https://www.youtube.com/embed/wx13DvHgXFY?autoplay=1&rel=0" 
+                    src="https://www.youtube.com/embed/CevVfbugmMw?autoplay=1&rel=0" 
                     title="Feedback Vânia Costa" 
                     frameBorder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -451,7 +451,7 @@ export default function App() {
                 ) : (
                   <>
                     <img 
-                      src="https://img.youtube.com/vi/wx13DvHgXFY/maxresdefault.jpg" 
+                      src="https://img.youtube.com/vi/CevVfbugmMw/hqdefault.jpg" 
                       alt="Vânia Costa" 
                       className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 transition-all duration-700" 
                       referrerPolicy="no-referrer"
