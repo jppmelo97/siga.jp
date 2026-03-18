@@ -437,34 +437,16 @@ export default function App() {
                 className="relative aspect-video bg-white/5 rounded-2xl overflow-hidden group cursor-pointer border border-white/10 hover:border-[#EE2D2D]/30 transition-colors"
                 onClick={() => setPlayingVideo('vania')}
               >
-                {playingVideo === 'vania' ? (
-                  <iframe 
-                    width="100%" 
-                    height="100%" 
-                    src="https://www.youtube.com/embed/CevVfbugmMw?autoplay=1&rel=0" 
-                    title="Feedback Vânia Costa" 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowFullScreen
-                    className="w-full h-full"
-                  ></iframe>
-                ) : (
-                  <>
-                    <img 
-                      src="https://img.youtube.com/vi/CevVfbugmMw/hqdefault.jpg" 
-                      alt="Vânia Costa" 
-                      className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 transition-all duration-700" 
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <PlayCircle className="w-16 h-16 text-[#EE2D2D] opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-300" />
-                    </div>
-                    {/* Simulated Progress Bar */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10">
-                      <div className="h-full bg-[#EE2D2D] w-1/3" />
-                    </div>
-                  </>
-                )}
+                <iframe 
+                  width="100%" 
+                  height="100%" 
+                  src="https://www.youtube.com/embed/CevVfbugmMw?rel=0" 
+                  title="Feedback Vânia Costa" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
               </div>
               <p className="text-sm font-medium text-[#EE2D2D] uppercase tracking-wider">Vânia Costa, Proprietária da Solar Engenharia</p>
             </motion.div>
@@ -481,34 +463,16 @@ export default function App() {
                 className="relative aspect-video bg-white/5 rounded-2xl overflow-hidden group cursor-pointer border border-white/10 hover:border-[#EE2D2D]/30 transition-colors"
                 onClick={() => setPlayingVideo('alfaomega')}
               >
-                {playingVideo === 'alfaomega' ? (
-                  <iframe 
-                    width="100%" 
-                    height="100%" 
-                    src="https://www.youtube.com/embed/8FQhwZVDFmI?autoplay=1&rel=0" 
-                    title="Feedback Alfa Omega" 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowFullScreen
-                    className="w-full h-full"
-                  ></iframe>
-                ) : (
-                  <>
-                    <img 
-                      src="https://img.youtube.com/vi/8FQhwZVDFmI/maxresdefault.jpg" 
-                      alt="Robert e Bruno" 
-                      className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 transition-all duration-700" 
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <PlayCircle className="w-16 h-16 text-[#EE2D2D] opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-300" />
-                    </div>
-                    {/* Simulated Progress Bar */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10">
-                      <div className="h-full bg-[#EE2D2D] w-1/4" />
-                    </div>
-                  </>
-                )}
+                <iframe 
+                  width="100%" 
+                  height="100%" 
+                  src="https://www.youtube.com/embed/8FQhwZVDFmI?rel=0" 
+                  title="Feedback Alfa Omega" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
               </div>
               <p className="text-sm font-medium text-[#EE2D2D] uppercase tracking-wider">Robert e Bruno, Proprietários da Alfa Omega</p>
             </motion.div>
