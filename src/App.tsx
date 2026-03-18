@@ -433,9 +433,6 @@ export default function App() {
               viewport={{ once: true }}
               className="flex flex-col gap-4"
             >
-              <h3 className="text-lg md:text-xl font-bold text-white tracking-tight">
-                "Saímos de commodity para premium em 6 meses"
-              </h3>
               <div 
                 className="relative aspect-video bg-white/5 rounded-2xl overflow-hidden group cursor-pointer border border-white/10 hover:border-[#EE2D2D]/30 transition-colors"
                 onClick={() => setPlayingVideo('vania')}
@@ -480,9 +477,6 @@ export default function App() {
               transition={{ delay: 0.1 }}
               className="flex flex-col gap-4"
             >
-              <h3 className="text-lg md:text-xl font-bold text-white tracking-tight">
-                "Faturamos 3x mais com o mesmo esforço"
-              </h3>
               <div 
                 className="relative aspect-video bg-white/5 rounded-2xl overflow-hidden group cursor-pointer border border-white/10 hover:border-[#EE2D2D]/30 transition-colors"
                 onClick={() => setPlayingVideo('alfaomega')}
