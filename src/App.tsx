@@ -183,8 +183,8 @@ export default function App() {
         {/* Background Accents & Premium Image */}
         <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
           <img 
-            src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=2000&q=80" 
-            alt="Corporate Environment" 
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2000&q=80" 
+            alt="Business Innovation Team" 
             className="w-full h-full object-cover [mask-image:linear-gradient(to_bottom,black_10%,transparent_90%)]"
             referrerPolicy="no-referrer"
           />
@@ -264,8 +264,14 @@ export default function App() {
       </section>
 
       {/* Services Grid */}
-      <section id="servicos" className="py-64 px-6 relative">
-        <div className="max-w-7xl mx-auto">
+      <section id="servicos" className="py-32 px-6 relative bg-carbon-black overflow-hidden">
+        {/* Subtle Innovation Background */}
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-10">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=80" alt="Business Data" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+          <div className="absolute inset-0 bg-black/80" />
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
             <div className="max-w-2xl">
               <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6">
@@ -365,7 +371,7 @@ export default function App() {
               <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-max z-20">
                 <div className="px-6 py-3 bg-black border border-dashed border-brand-red/60 shadow-[0_10px_30px_rgba(0,0,0,0.8)] backdrop-blur-md rounded-sm">
                   <p className="text-[10px] md:text-xs font-sans font-bold tracking-[0.15em] text-brand-red uppercase text-center whitespace-nowrap">
-                    Experiência Internacional em 14 Países
+                    Especialista em Gestão e Inovação
                   </p>
                 </div>
               </div>
@@ -422,7 +428,7 @@ export default function App() {
               className="md:col-span-2 p-8 md:p-16 rounded-[40px] bg-white/[0.03] border border-white/10 flex flex-col justify-between group hover:border-brand-red/30 transition-all duration-500 relative overflow-hidden"
             >
               <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-1000 z-0">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000" alt="Data" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" referrerPolicy="no-referrer" />
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="Data" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" referrerPolicy="no-referrer" />
               </div>
               <div className="absolute top-0 right-0 w-64 h-64 bg-brand-red/5 blur-[80px] rounded-full -mr-20 -mt-20 z-0" />
               
@@ -451,7 +457,7 @@ export default function App() {
                 className="p-8 md:p-12 rounded-[40px] bg-brand-red text-white flex flex-col justify-between shadow-[0_20px_50px_rgba(255,0,0,0.15)] relative overflow-hidden group"
               >
                 <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <img src="https://picsum.photos/seed/growth/600/800" alt="" className="w-full h-full object-cover" aria-hidden="true" referrerPolicy="no-referrer" />
+                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="Tech Charts" className="w-full h-full object-cover" aria-hidden="true" referrerPolicy="no-referrer" />
                 </div>
                 <div className="w-12 h-12 rounded-xl bg-black/10 flex items-center justify-center relative z-10">
                   <Globe className="w-6 h-6" />
@@ -463,16 +469,19 @@ export default function App() {
               </motion.div>
 
               <motion.div 
-                initial={{ opacity: 0, x: 20 }}
+                initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-8 md:p-12 rounded-[40px] bg-white/[0.03] border border-white/10 flex flex-col justify-between group hover:border-brand-red/30 transition-all duration-500"
+                className="p-8 md:p-12 rounded-[40px] bg-white/[0.03] border border-white/10 flex flex-col justify-between group hover:border-brand-red/30 transition-all duration-500 relative overflow-hidden"
               >
-                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-white">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-1000 z-0">
+                  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Corporate Team" className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" referrerPolicy="no-referrer" />
+                </div>
+                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-white relative z-10">
                   <Users className="w-6 h-6" />
                 </div>
-                <div>
+                <div className="relative z-10">
                   <div className="text-5xl font-display font-bold mb-2 text-white">
                     <Counter value={200} suffix="+" />
                   </div>
@@ -510,8 +519,8 @@ export default function App() {
               viewport={{ once: true }}
               className="md:col-span-2 p-8 md:p-16 rounded-[40px] bg-dark-gray border border-white/5 flex flex-col md:flex-row items-center gap-12 md:gap-16 group overflow-hidden relative"
             >
-              <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity">
-                <img src="https://picsum.photos/seed/tech-bg/1200/800" alt="" className="w-full h-full object-cover" aria-hidden="true" referrerPolicy="no-referrer" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200" alt="Global Tech Innovation" className="w-full h-full object-cover" aria-hidden="true" referrerPolicy="no-referrer" />
               </div>
               <div className="w-full md:w-1/3 aspect-square rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center relative overflow-hidden">
                 <Rocket className="w-20 h-20 text-brand-red opacity-20 group-hover:scale-110 transition-transform duration-700" />
