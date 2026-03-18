@@ -3,8 +3,8 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", sans-serif;
-  --color-brand-red: #E31212; /* Refined deeper red */
-  --color-carbon-black: #050505;
+  --color-brand-red: #EE2D2D; /* Vibrant Red from Reference */
+  --color-carbon-black: #000000; /* Pure Black Background */
   --color-dark-gray: #0D0D0D; 
   --color-glass: rgba(255, 255, 255, 0.03);
   --color-border-subtle: rgba(255, 255, 255, 0.08);

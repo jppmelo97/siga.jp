@@ -161,7 +161,7 @@ export default function App() {
           <div className="text-xl font-display font-bold tracking-tighter">
             JOÃO<span className="text-brand-red">MELO</span>
           </div>
-          <div className="hidden md:flex gap-8 text-sm font-medium text-white/60">
+          <div className="hidden md:flex gap-8 text-sm font-medium text-[#CCCCCC]">
             <a href="#servicos" className="hover:text-brand-red transition-colors focus:outline-none focus:ring-2 focus:ring-brand-red rounded px-2">O que eu faço</a>
             <a href="#autoridade" className="hover:text-brand-red transition-colors focus:outline-none focus:ring-2 focus:ring-brand-red rounded px-2">Quem sou eu</a>
             <a href="#resultados" className="hover:text-brand-red transition-colors focus:outline-none focus:ring-2 focus:ring-brand-red rounded px-2">Resultados</a>
@@ -208,7 +208,7 @@ export default function App() {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] tracking-tight mb-10">
               Organizo sua empresa por dentro e <span className="text-brand-red italic">fortaleço como ela é vista pelo mercado.</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/40 max-w-2xl mb-12 leading-relaxed font-light">
+            <p className="text-lg md:text-xl text-[#CCCCCC] max-w-2xl mb-12 leading-relaxed font-light">
               Uma metodologia que une o rigor da gestão à força da narrativa. Estruturo sua operação para escala real e construo sua imagem como autoridade incontestável.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
@@ -234,7 +234,7 @@ export default function App() {
                   <span className="text-white font-bold">
                     <Counter value={200} suffix="+" /> Empresas
                   </span>
-                  <p className="text-white/40 text-xs flex items-center gap-1">
+                  <p className="text-[#CCCCCC] text-xs flex items-center gap-1">
                     <MapPin className="w-3 h-3 text-brand-red" /> Atendidas em todo o Brasil
                   </p>
                 </div>
@@ -247,7 +247,7 @@ export default function App() {
       {/* Social Proof Bar */}
       <section className="py-24 border-y border-white/5 bg-carbon-black overflow-hidden relative">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-[10px] font-bold text-white/40 uppercase tracking-[0.3em] mb-12 text-center">
+          <p className="text-[10px] font-bold text-[#CCCCCC] uppercase tracking-[0.3em] mb-12 text-center">
             Quem já confiou e aprovou o meu trabalho
           </p>
           <div className="relative group">
@@ -271,7 +271,7 @@ export default function App() {
               <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6">
                 Arquitetura de <span className="text-brand-red">Negócios & Narrativa.</span>
               </h2>
-              <p className="text-xl text-white/40 font-light">
+              <p className="text-xl text-[#CCCCCC] font-light">
                 Soluções estratégicas para quem busca escala real e uma marca que domina o mercado.
               </p>
             </div>
@@ -308,7 +308,7 @@ export default function App() {
                     {service.icon}
                   </div>
                   <h3 className="text-2xl font-bold mb-4 group-hover:text-brand-red transition-colors">{service.title}</h3>
-                  <p className="text-white/50 leading-relaxed font-light">
+                  <p className="text-[#CCCCCC] leading-relaxed font-light">
                     {service.description}
                   </p>
                 </div>
@@ -318,45 +318,68 @@ export default function App() {
         </div>
       </section>
 
-      {/* Authority Section - Minimalist */}
-      <section id="autoridade" className="py-40 relative bg-carbon-black overflow-hidden flex items-center justify-center border-t border-white/5">
+      {/* Authority Section - Impact Centered Redesign */}
+      <section id="autoridade" className="py-32 md:py-48 relative bg-black overflow-hidden flex flex-col items-center justify-center border-t border-white/5">
         <div className="absolute top-0 right-0 w-full h-full pointer-events-none">
-          <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-brand-red/5 blur-[120px] rounded-full -translate-y-1/2" />
+          <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-brand-red/5 blur-[150px] rounded-full -translate-x-1/2 -translate-y-1/2" />
         </div>
         
-        <div className="max-w-4xl mx-auto px-6 w-full relative z-10 flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-20">
+        <div className="max-w-4xl mx-auto px-6 w-full relative z-10 flex flex-col items-center text-center">
             
-            {/* Minimalist Avatar & Subtext */}
-            <div className="flex-shrink-0 flex flex-col items-center">
+            <motion.div 
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-8 inline-flex items-center gap-4"
+            >
+              <span className="w-12 h-[1px] bg-brand-red" />
+              <span className="text-[10px] md:text-sm font-bold text-brand-red tracking-[0.3em] uppercase">Estrategista de Negócios</span>
+              <span className="w-12 h-[1px] bg-brand-red" />
+            </motion.div>
+            
+            <motion.h2 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-20 text-white leading-none tracking-tighter"
+            >
+              João Melo
+            </motion.h2>
+
+            {/* Giant Central Avatar */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="relative w-64 h-64 md:w-96 md:h-96 mx-auto mb-20"
+            >
               <img 
                 src="/joao-melo.jpg" 
                 alt="João Melo" 
-                className="w-24 h-24 md:w-32 md:h-32 object-cover rounded-full filter grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover rounded-full filter grayscale hover:grayscale-0 transition-all duration-700 shadow-[0_0_80px_rgba(238,45,45,0.15)] ring-1 ring-white/10"
                 referrerPolicy="no-referrer"
               />
-              <p className="mt-6 text-[10px] md:text-xs font-sans font-light tracking-[0.1em] text-white/40 uppercase text-center max-w-[140px] leading-relaxed">
-                Experiência Internacional<br/>em 14 Países
-              </p>
-            </div>
+              
+              {/* Dashed Accent Badge inspired by image reference */}
+              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-max z-20">
+                <div className="px-6 py-3 bg-black border border-dashed border-brand-red/60 shadow-[0_10px_30px_rgba(0,0,0,0.8)] backdrop-blur-md rounded-sm">
+                  <p className="text-[10px] md:text-xs font-sans font-bold tracking-[0.15em] text-brand-red uppercase text-center whitespace-nowrap">
+                    Experiência Internacional em 14 Países
+                  </p>
+                </div>
+              </div>
+            </motion.div>
             
             {/* Content & Credentials */}
             <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex-1 text-center md:text-left flex flex-col justify-center"
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+              className="flex flex-col items-center max-w-3xl mt-4"
             >
-              <div className="mb-4 inline-flex items-center gap-2">
-                <span className="w-8 h-[1px] bg-brand-red" />
-                <span className="text-[10px] md:text-xs font-bold text-brand-red tracking-[0.2em] uppercase">Estrategista de Negócios</span>
-              </div>
-              
-              <h2 className="text-3xl md:text-5xl font-display font-bold mb-8 text-white leading-tight">
-                João Melo
-              </h2>
-              
-              <div className="space-y-6 text-base md:text-lg font-light text-white/50 leading-relaxed mb-10">
+              <div className="space-y-6 text-lg md:text-2xl font-light text-[#CCCCCC] leading-relaxed mb-12 text-center">
                 <p>
                   Administrador pela <span className="text-white font-medium">UEMA</span> com MBA em Gestão Empresarial pela <span className="text-white font-medium">FGV/Rio</span>. 
                   Com uma trajetória sénior forjada em gigantes como <span className="text-white font-medium">Ambev</span> e <span className="text-white font-medium">Lojas Americanas</span>.
@@ -366,15 +389,15 @@ export default function App() {
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-6 items-center justify-center md:justify-start pt-6 border-t border-white/5">
+              <div className="flex flex-col sm:flex-row gap-8 items-center justify-center pt-8 border-t border-white/5 w-full">
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-brand-red" />
-                  <span className="text-sm text-white/70 font-medium">+<Counter value={200} /> empresas impactadas</span>
+                  <CheckCircle2 className="w-6 h-6 text-brand-red" />
+                  <span className="text-base text-[#CCCCCC] font-medium">+<Counter value={200} /> empresas impactadas</span>
                 </div>
-                <div className="hidden sm:block text-white/20">•</div>
+                <div className="hidden sm:block text-[#CCCCCC]/20">•</div>
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-brand-red" />
-                  <span className="text-sm text-white/70 font-medium">Atuação em 6 estados</span>
+                  <CheckCircle2 className="w-6 h-6 text-brand-red" />
+                  <span className="text-base text-[#CCCCCC] font-medium">Atuação em 6 estados</span>
                 </div>
               </div>
             </motion.div>
@@ -389,7 +412,7 @@ export default function App() {
             <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter mb-6">
               Impacto em <span className="text-brand-red">Números.</span>
             </h2>
-            <p className="text-xl text-white/40 font-light">Resultados mensuráveis que validam o método.</p>
+            <p className="text-xl text-[#CCCCCC] font-light">Resultados mensuráveis que validam o método.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div 
@@ -407,7 +430,7 @@ export default function App() {
                 <div className="w-16 h-16 rounded-2xl bg-brand-red/10 flex items-center justify-center text-brand-red">
                   <TrendingUp className="w-8 h-8" />
                 </div>
-                <div className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold text-white/40 uppercase tracking-widest">
+                <div className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold text-[#CCCCCC] uppercase tracking-widest">
                   Aprovado
                 </div>
               </div>
@@ -416,7 +439,7 @@ export default function App() {
                   <Counter value={9.2} decimals={1} />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold mb-4">Índice de Confiança</h3>
-                <p className="text-lg md:text-xl text-white/40 font-light max-w-md">Nossos clientes não apenas aprovam, eles recomendam. Um nível de excelência que transforma a cultura da empresa.</p>
+                <p className="text-lg md:text-xl text-[#CCCCCC] font-light max-w-md">Nossos clientes não apenas aprovam, eles recomendam. Um nível de excelência que transforma a cultura da empresa.</p>
               </div>
             </motion.div>
             
@@ -454,7 +477,7 @@ export default function App() {
                     <Counter value={200} suffix="+" />
                   </div>
                   <h3 className="text-lg font-bold mb-1">Empresas</h3>
-                  <p className="text-white/40 text-xs font-light tracking-wider uppercase">Atendidas com sucesso</p>
+                  <p className="text-[#CCCCCC] text-xs font-light tracking-wider uppercase">Atendidas com sucesso</p>
                 </div>
               </motion.div>
             </div>
@@ -477,7 +500,7 @@ export default function App() {
                   <Counter value={30} suffix="%" />
                 </div>
                 <h3 className="text-xl md:text-2xl font-bold mb-4">Agilidade Operacional</h3>
-                <p className="text-white/40 font-light">Redução imediata de gargalos através de automação inteligente e revisão de processos.</p>
+                <p className="text-[#CCCCCC] font-light">Redução imediata de gargalos através de automação inteligente e revisão de processos.</p>
               </div>
             </motion.div>
 
@@ -496,7 +519,7 @@ export default function App() {
               </div>
               <div className="flex-1 relative z-10">
                 <h3 className="text-2xl md:text-3xl font-bold mb-6">Inteligência Operacional</h3>
-                <p className="text-lg md:text-xl text-white/40 font-light leading-relaxed">
+                <p className="text-lg md:text-xl text-[#CCCCCC] font-light leading-relaxed">
                   Não é apenas tecnologia, é liberdade. Implementamos agentes que trabalham enquanto você escala sua autoridade e foca no que realmente importa.
                 </p>
               </div>
@@ -517,7 +540,7 @@ export default function App() {
             <h2 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter mb-12 leading-[0.85]">
               Sua empresa pode <span className="text-brand-red italic">render muito mais.</span>
             </h2>
-            <p className="text-2xl text-white/60 mb-16 max-w-2xl mx-auto font-light">
+            <p className="text-2xl text-[#CCCCCC] mb-16 max-w-2xl mx-auto font-light">
               O diagnóstico é o primeiro passo para você ter uma empresa organizada, eficiente e que não depende só de você.
             </p>
             <div className="flex flex-col items-center gap-8">
@@ -530,7 +553,7 @@ export default function App() {
               >
                 Agendar Consultoria de Marca
               </a>
-              <div className="flex flex-col md:flex-row gap-8 text-white/40 font-medium">
+              <div className="flex flex-col md:flex-row gap-8 text-[#CCCCCC] font-medium">
                 <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 hover:text-brand-red transition-colors focus:outline-none focus:ring-2 focus:ring-brand-red rounded px-2" aria-label={`Enviar e-mail para ${EMAIL}`}>
                   <Mail className="w-5 h-5" /> {EMAIL}
                 </a>
