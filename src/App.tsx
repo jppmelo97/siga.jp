@@ -30,7 +30,9 @@ import {
   Brain,
   Share2,
   Fingerprint,
-  Target
+  Target,
+  PlayCircle,
+  Quote
 } from 'lucide-react';
 
 type Logo = { name: string; domain?: string; image?: string };
@@ -405,6 +407,146 @@ export default function App() {
               </div>
             </motion.div>
 
+        </div>
+      </section>
+
+      {/* Testimonials / Social Proof */}
+      <section id="depoimentos" className="py-32 px-6 bg-black border-t border-white/5 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tighter mb-6 text-white">
+              Resultados que <span className="text-[#EE2D2D] italic">falam por si.</span>
+            </h2>
+            <p className="text-xl text-[#CCCCCC] font-light max-w-2xl mx-auto">
+              Depoimentos reais de quem já escalou operações e assumiu liderança de mercado.
+            </p>
+          </div>
+
+          {/* Video Testimonials Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            
+            {/* Video Placeholder 1 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-col gap-4"
+            >
+              <h3 className="text-lg md:text-xl font-bold text-white tracking-tight">
+                "Saímos de commodity para premium em 6 meses"
+              </h3>
+              <div className="relative aspect-video bg-white/5 rounded-2xl overflow-hidden group cursor-pointer border border-white/10 hover:border-[#EE2D2D]/30 transition-colors">
+                <img 
+                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&w=800&q=80" 
+                  alt="CEO Tech" 
+                  className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 transition-all duration-700" 
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <PlayCircle className="w-16 h-16 text-[#EE2D2D] opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-300" />
+                </div>
+                {/* Simulated Progress Bar */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10">
+                  <div className="h-full bg-[#EE2D2D] w-1/3" />
+                </div>
+              </div>
+              <p className="text-sm font-medium text-[#EE2D2D] uppercase tracking-wider">CEO, Grupo de Tecnologia (PR)</p>
+            </motion.div>
+
+            {/* Video Placeholder 2 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="flex flex-col gap-4"
+            >
+              <h3 className="text-lg md:text-xl font-bold text-white tracking-tight">
+                "Faturamos 3x mais com o mesmo esforço"
+              </h3>
+              <div className="relative aspect-video bg-white/5 rounded-2xl overflow-hidden group cursor-pointer border border-white/10 hover:border-[#EE2D2D]/30 transition-colors">
+                <img 
+                  src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" 
+                  alt="Diretor Industria" 
+                  className="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 transition-all duration-700" 
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <PlayCircle className="w-16 h-16 text-[#EE2D2D] opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-300" />
+                </div>
+                {/* Simulated Progress Bar */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10">
+                  <div className="h-full bg-[#EE2D2D] w-1/4" />
+                </div>
+              </div>
+              <p className="text-sm font-medium text-[#EE2D2D] uppercase tracking-wider">Diretor de Operações, Indústria Têxtil (SP)</p>
+            </motion.div>
+
+          </div>
+
+          {/* Text Feedback Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* Feedback 1 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="p-8 rounded-2xl bg-white/[0.03] border border-white/10 flex flex-col justify-between"
+            >
+              <div>
+                <Quote className="w-8 h-8 text-[#EE2D2D] mb-6 opacity-30" />
+                <p className="text-[#CCCCCC] leading-relaxed font-light mb-8">
+                  "O João não entregou apenas um PDF de marca. Ele reorganizou a nossa operação para suportar o crescimento que a nova autoridade nos trouxe. Saímos de um caos de gestão para uma marca que hoje fatura 3x mais com o mesmo esforço."
+                </p>
+              </div>
+              <div>
+                <p className="font-bold text-white">Diretor de Operações</p>
+                <p className="text-sm font-medium text-[#EE2D2D]">Indústria Têxtil (SP)</p>
+              </div>
+            </motion.div>
+
+            {/* Feedback 2 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="p-8 rounded-2xl bg-white/[0.03] border border-white/10 flex flex-col justify-between"
+            >
+              <div>
+                <Quote className="w-8 h-8 text-[#EE2D2D] mb-6 opacity-30" />
+                <p className="text-[#CCCCCC] leading-relaxed font-light mb-8">
+                  "A maior mudança foi no nosso posicionamento. Antes éramos vistos como 'commodity' e brigávamos por preço. Depois da consultoria, subimos o ticket médio em 40% e o cliente parou de questionar o valor. O rigor da Ambev aplicado ao nosso negócio foi o diferencial."
+                </p>
+              </div>
+              <div>
+                <p className="font-bold text-white">CEO</p>
+                <p className="text-sm font-medium text-[#EE2D2D]">Grupo de Tecnologia (PR)</p>
+              </div>
+            </motion.div>
+
+            {/* Feedback 3 */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="p-8 rounded-2xl bg-white/[0.03] border border-white/10 flex flex-col justify-between"
+            >
+              <div>
+                <Quote className="w-8 h-8 text-[#EE2D2D] mb-6 opacity-30" />
+                <p className="text-[#CCCCCC] leading-relaxed font-light mb-8">
+                  "Impressionante como a metodologia se adaptou à nossa realidade regional em MG. O João traz uma bagagem internacional, mas sabe exatamente onde o calo do empresário brasileiro aperta. 200 empresas atendidas não é um número, é método comprovado."
+                </p>
+              </div>
+              <div>
+                <p className="font-bold text-white">Fundadora</p>
+                <p className="text-sm font-medium text-[#EE2D2D]">Rede de Varejo (MG)</p>
+              </div>
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
